@@ -1,0 +1,13 @@
+name: My first workflow
+on: [ push ]
+
+jobs:
+  hello_World:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Echo current branch
+      run: echo "$(date: Current branch is ${{ github.ref_name}})"
+
+    - name: Chechout source
+      uses: actions/checkout@v2
